@@ -1,0 +1,26 @@
+<div style="text-align: center">
+
+<h1>My tasks</h1>
+
+
+
+<ol>
+  <% @tasks.each do |task| %>
+    <% completed = ''  %>
+    <% if task.completed.nil? || task.completed == true %>
+      <% completed = '✔️' %>
+    <% else %>
+      <% completed = '✖️' %>
+    <% end %>
+    <li>
+      <!-- <a href="tasks/<%= task.id %>"> -->
+      <%= link_to " #{completed} - #{task.title}" , task_path(task), style: "text-decoration: none !important;" %>
+      <!-- </a> -->
+    </li>
+  <% end %>
+</ol>
+<hr>
+<p>
+  <%= link_to '+ Add a new task', new_task_path, style: "text-decoration: none !important;"%>
+</p>
+</div>

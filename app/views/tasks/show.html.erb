@@ -1,0 +1,35 @@
+<div style="text-align: center">
+
+<h1>Task details</h1>
+
+  <% completed = ''  %>
+  <% if @task.completed == true %>
+  <% completed = '✔️' %>
+  <% else %>
+  <% completed = '✖️' %>
+  <% end %>
+
+<p>Done? <%= completed %></p>
+<p>Title: <%= @task.title %></p>
+<p>Details: <%= @task.details %></p>
+
+<!-- <p><a href="/tasks">All Tasks with Anchor Tag</a></p> -->
+<hr>
+<%= link_to 'Edit this task', edit_task_path %>
+<hr>
+<p>
+  <%= link_to 'Delete this task', task_path(@task), method: :delete, data: { confirm: 'Are you really sure?' } %>
+</p>
+<hr>
+<p>
+  <%= link_to 'Back to Homepage', tasks_path %>
+</p>
+</div>
+<!-- <p>
+  <#%= link_to 'Edit this Task', edit_task_path(@task) %>
+</p>
+
+<p>
+  <#%= link_to 'Remove This task', task_path(@task), method: :delete, data: { confirm: 'Are you Sure?' } %>
+</p>
+ -->
