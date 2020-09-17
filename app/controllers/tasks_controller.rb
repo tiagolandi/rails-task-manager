@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   def index
+    # Unico que eh no plural!!! O resto eh singular
     @tasks = Task.all
   end
 

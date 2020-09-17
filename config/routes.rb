@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :tasks
   # Generic syntax:
-  # verb 'path', to: 'controller#action'
+  # ***** verb 'path', to: 'controller#action', as: :action_model *****
 
   # # Read all:
   # get 'tasks', to: 'tasks#index'
@@ -25,4 +25,9 @@ Rails.application.routes.draw do
 
   # # Delete:
   # delete 'tasks/:id', to: 'tasks#destroy'
+
+  # <!-- ANCHOR_URL in views will use a path helper based on the route name. -->
+  # <!-- Aula 01 de RAILS - lecture - bottom! -->
+  # <!-- neste caso,  ***as: :new_task*** no ROUTER acima! -->
+  # <!-- new_task_path leva para tasks/new -->
 end
