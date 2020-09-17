@@ -1,8 +1,5 @@
 <div style="text-align: center">
-
 <h1>My tasks</h1>
-
-
 
 <ol>
   <% @tasks.each do |task| %>
@@ -14,13 +11,17 @@
     <% end %>
     <li>
       <!-- <a href="tasks/<%= task.id %>"> -->
-      <%= link_to " #{completed} - #{task.title}" , task_path(task), style: "text-decoration: none !important;" %>
+      <%= link_to "#{task.title} - #{completed}" , task_path(task), style: "text-decoration: none !important;" %>
       <!-- </a> -->
     </li>
   <% end %>
 </ol>
 <hr>
 <p>
+  <!-- ANCHOR_URL will use a path helper based on the route name. -->
+  <!-- Aula 01 de RAILS - lecture - bottom! -->
+  <!-- neste caso, v.g. VER as: :new_task no ROUTER! -->
+  <!-- new_task_path leva para tasks/new -->
   <%= link_to '+ Add a new task', new_task_path, style: "text-decoration: none !important;"%>
 </p>
 </div>

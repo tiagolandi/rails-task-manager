@@ -1,0 +1,32 @@
+
+<%= simple_form_for(@task) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :details %>
+  <%= f.check_box :completed %>
+  <%= f.submit %>
+<% end %>
+
+<!-- old style:
+
+<%#= form_for(@task) do |f| %>
+
+  <p><strong>
+    <%#= f.label :title %>
+    <%#= f.text_field :title %>
+  </p></strong>
+
+  <p><strong>
+    <%#= f.label :details %>
+    <%#= f.text_field :details %>
+  </p></strong>
+
+  <p><strong>
+    <%#= f.label :completed %>
+    <%#= f.check_box :completed %>
+  </p></strong>
+
+  <p>
+    <%#= f.submit%>
+  </p> -->
+
+<%# end %>

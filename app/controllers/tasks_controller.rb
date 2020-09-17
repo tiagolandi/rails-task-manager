@@ -1,5 +1,4 @@
 class TasksController < ApplicationController
-
   def index
     @tasks = Task.all
   end
@@ -12,8 +11,8 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
+  # create, update & destroy wont need their own view!
   def create
-
     @task = Task.new(task_params)
     @task.save
 
@@ -21,11 +20,11 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id]) # no before_action yet!!!!
+    @task = Task.find(params[:id]) # no before_action yet !!!
   end
 
   def update
-    @task = Task.find(params[:id]) # no before_action yet!!!!
+    @task = Task.find(params[:id]) # no before_action yet !!!
     @task.update(task_params)
     redirect_to task_path(@task)
   end
@@ -38,8 +37,8 @@ class TasksController < ApplicationController
 
   private
 
+  # We cannot save data without using '''Strong Params'''
   def task_params
     params.require(:task).permit(:title, :details, :completed)
   end
-
 end

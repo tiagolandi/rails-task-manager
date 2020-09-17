@@ -1,28 +1,8 @@
 <div style="text-align: center">
 <h1>Edit a task</h1>
 
-<%= form_for(@task) do |f| %>
+<%= render "form", restaurant: @restaurant %>
 
-  <p><strong>
-    <%= f.label :title %>
-    <%= f.text_field :title, placeholder: "New task title here" %>
-  </p></strong>
-
-  <p><strong>
-    <%= f.label :details %>
-    <%= f.text_field :details, placeholder: "New task description" %>
-  </p></strong>
-
-  <p><strong>
-    <%= f.label :completed %>
-    <%= f.check_box :completed %>
-  </p></strong>
-
-  <p>
-    <%= f.submit "Press to edit!"%>
-  </p>
-
-<% end %>
 <hr>
 
 <p>

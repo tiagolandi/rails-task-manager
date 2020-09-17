@@ -1,0 +1,12 @@
+@import "bootstrap/scss/bootstrap";
+
+$gray: #F4F4F4;
+$spacer: 8px;
+
+body {
+  background: $gray; // Using this variable
+}
+
+.btn {
+  padding: $spacer ($spacer * 6);
+}
